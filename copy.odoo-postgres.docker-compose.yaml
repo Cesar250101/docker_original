@@ -11,9 +11,9 @@ services:
       - "${WEBSOCKET_PORT}:8072"
     volumes:
       - odoo-web-data:/var/lib/odoo/
-      - ./config:/etc/odoo/
+      - ./config:.
       - ./addons:/mnt/extra-addons/
-    entrypoint: "/usr/bin/odoo -c /etc/odoo/odoo.conf"
+    entrypoint: "/usr/bin/odoo -c odoo.conf"
   db:
     container_name: ${DB_HOST}
     image: ${DB_IMAGE}
